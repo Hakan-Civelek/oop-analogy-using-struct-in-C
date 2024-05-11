@@ -1,11 +1,11 @@
-// Bitki.c
 #include "Bitki.h"
 #include <stdlib.h>
 
 Bitki BitkiOlustur(int tur, int can, int konumX, int konumY) {
-    Bitki this = (Bitki)malloc(sizeof(struct BITKI));
-    this->super = *CanliOlustur(tur, can, konumX, konumY); // Canli yapısının kopyası oluşturuluyor
-    this->super.gorunum = &bitkiGorunum; // Bitki nesnesinin gorunum fonksiyonu atanıyor
+    Bitki this;
+    this = (Bitki)malloc(sizeof(struct BITKI));
+    this->super = CanliOlustur(tur, can, konumX, konumY); // Canli yapısının kopyası oluşturuluyor
+    this->super->gorunum = &bitkiGorunum; // Bitki nesnesinin gorunum fonksiyonu atanıyor
     return this;
 }
 

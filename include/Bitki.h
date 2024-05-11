@@ -1,11 +1,10 @@
-// Bitki.h
 #ifndef BITKI_H
 #define BITKI_H
 
 #include "Canli.h"
 
 struct BITKI {
-    struct CANLI super;
+    Canli super;
 
     void (*yoket)(struct BITKI*);
 };
