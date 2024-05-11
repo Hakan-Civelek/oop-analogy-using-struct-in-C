@@ -1,13 +1,13 @@
 #include "Canli.h"
 #include <stdlib.h>
 
-Canli CanliOlustur(int tur, int can, int konumX, int konumY) {
+Canli CanliOlustur(int tur, int can, int satir, int sutun) {
     Canli this;
     this = (Canli)malloc(sizeof(struct CANLI));
     this->tur = tur;
     this->can = can;
-    this->x = konumX;
-    this->y = konumY;
+    this->satir = satir;
+    this->sutun = sutun;
 
     this->yoket = &CanliYokEt;
     return this;

@@ -3,8 +3,8 @@
 
 struct CANLI {
     int can;
-    int x;
-    int y;
+    int satir;
+    int sutun;
     int tur;
 
     void (*yoket)(struct CANLI*);
