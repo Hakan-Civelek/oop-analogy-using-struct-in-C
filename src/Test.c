@@ -20,18 +20,27 @@ int main() {
 
     void*** array = habitatOlustur(dosya, satir_sayisi, sutun_sayisi);
 
-    printf("Array:\n");
     for (int i = 0; i < satir_sayisi; i++) {
         for (int j = 0; j < sutun_sayisi; j++) {
             int deger;
             fscanf(dosya, "%d", &deger); // Boşluk karakteriyle okuma yapıldı
             array[i][j] = BitkiOlustur(1, deger, i, j); // ASCII'den gerçek değere dönüşüm
-            printf("Bitki gorunumu[%d][%d]: %c\n",i,j, bitkiGorunum());
-            printf("can: %d\n\n", ((Bitki)array[i][j])->super->can);
         }
     }
 
-    
+    for (int i = 0; i < satir_sayisi; i++) {
+    for (int j = 0; j < sutun_sayisi; j++) {
+        Canli* canli = array[i][j];
+        if ((*canli)->tur == 1) {
+            Bitki bitki = (Bitki)canli;
+            printf("Bitki gorunumu[%d][%d]: %c\n", i, j, bitkiGorunum());
+            printf("can: %d\n\n", bitki->super->can);
+        } else {
+            // Diğer canlı türlerine ait işlemler buraya eklenebilir
+        }
+    }
+}
+
     // Array'deki her elemanın yok edilmesi
     for (int i = 0; i < satir_sayisi; i++) {
         for (int j = 0; j < sutun_sayisi; j++) {
