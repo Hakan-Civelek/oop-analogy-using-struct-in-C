@@ -18,6 +18,6 @@ char bocekGorunum() {
 
 void BocekYoket(Bocek this) {
     if (this == NULL) return;
-    CanliYokEt(this->super); // Canli yapısını silebilmek için Bitki yapısını Canli yapısına dönüştürüyoruz
+    CanliYokEt((Canli)this); // Canli yapısını silebilmek için Bitki yapısını Canli yapısına dönüştürüyoruz
     free(this);
 }

@@ -12,7 +12,7 @@ Pire PireOlustur(int tur, int can, int satir, int sutun) {
 }
 
 char pireGorunum() {
-    return 'S';
+    return 'P';
 }
 
 void PireYoket(Pire this) {
