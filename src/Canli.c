@@ -1,7 +1,7 @@
 #include "Canli.h"
 #include <stdlib.h>
 
-Canli CanliOlustur(int tur, int can, int satir, int sutun) {
+Canli CanliOlustur(int tur, int can, int satir, int sutun) { 
     Canli this;
     this = (Canli)malloc(sizeof(struct CANLI));
     this->tur = tur;

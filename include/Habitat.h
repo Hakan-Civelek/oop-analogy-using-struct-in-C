@@ -4,10 +4,9 @@
 #include "Bitki.h"
 #include "Canli.h"
 #include "File.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 void*** habitatOlustur(FILE*, int, int);
+void habitaYazdir();
 /*void habitatElemanEkle(FILE*, void***, int, int );*/
 /*void callGorunumMethod(void*);*/
 

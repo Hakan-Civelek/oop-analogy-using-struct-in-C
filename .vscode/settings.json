@@ -4,6 +4,7 @@
         "stdio.h": "c",
         "stdlib.h": "c",
         "habitat.h": "c",
-        "canli.h": "c"
+        "canli.h": "c",
+        "string.h": "c"
     }
 }

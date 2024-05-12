@@ -1,6 +1,9 @@
 #ifndef CANLI_H
 #define CANLI_H
 
+#include <stdio.h>
+#include <stdlib.h>
+
 struct CANLI {
     int can;
     int satir;

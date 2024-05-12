@@ -30,7 +30,7 @@ void*** habitatOlustur(FILE *dosya, int satir_sayisi, int sutun_sayisi) {
             i++;
         }
     }
-}*/
+}
 
 /*void callGorunumMethod(void *ptr) {
     struct CANLI *canli = (struct CANLI *)ptr;

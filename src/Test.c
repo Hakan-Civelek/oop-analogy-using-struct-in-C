@@ -1,6 +1,8 @@
-#include "Bitki.h"
 #include "Canli.h"
+#include "Bitki.h"
+#include "Bocek.h"
 #include "Habitat.h"
+#include "Sinek.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -23,23 +25,50 @@ int main() {
     for (int i = 0; i < satir_sayisi; i++) {
         for (int j = 0; j < sutun_sayisi; j++) {
             int deger;
-            fscanf(dosya, "%d", &deger); // Boşluk karakteriyle okuma yapıldı
-            array[i][j] = BitkiOlustur(1, deger, i, j); // ASCII'den gerçek değere dönüşüm
+            fscanf(dosya, "%d", &deger);
+            Canli canli = NULL;
+            if (deger < 33)
+            {
+                array[i][j] = BitkiOlustur(1, deger, i, j);
+            } else if (deger < 67) {
+                array[i][j] = BocekOlustur(2, deger, i, j);
+            } else {
+                array[i][j] = SinekOlustur(3, deger, i, j);
+            }     
         }
     }
 
+/*
+
+Bitki: 1-9
+Böcek: 10-20
+Sinek: 21-50
+Pire: 51-99
+
+*/
+
     for (int i = 0; i < satir_sayisi; i++) {
-    for (int j = 0; j < sutun_sayisi; j++) {
-        Canli* canli = array[i][j];
-        if ((*canli)->tur == 1) {
-            Bitki bitki = (Bitki)canli;
-            printf("Bitki gorunumu[%d][%d]: %c\n", i, j, bitkiGorunum());
-            printf("can: %d\n\n", bitki->super->can);
-        } else {
-            // Diğer canlı türlerine ait işlemler buraya eklenebilir
+        for (int j = 0; j < sutun_sayisi; j++) {
+            Canli* canli = array[i][j];
+            if ((*canli)->tur == 1) {
+                Bitki bitki = (Bitki)canli;
+                printf("%c ",(*canli)->gorunum());
+            } else if ((*canli)->tur == 2) {
+                Bocek bocek = (Bocek)canli;
+                printf("%c ",(*canli)->gorunum());
+            } /*else if ((*canli)->tur == 3) {
+                Sinek sinek = (Sinek)canli;
+                printf("can: %d\n\n", (*canli)->can);
+            }*/ else {
+                Canli** canli = array[i][j];
+                if((**canli)->tur == 3){
+                    Sinek sinek = (Sinek)canli;
+                    printf("%c ", (**canli)->gorunum());
+                }                
+            }
         }
+        printf("\n");
     }
-}
 
     // Array'deki her elemanın yok edilmesi
     for (int i = 0; i < satir_sayisi; i++) {
