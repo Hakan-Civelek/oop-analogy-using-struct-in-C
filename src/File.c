@@ -1,6 +1,6 @@
 #include "File.h"
 
-void countRowsAndColumns(FILE *dosya, int *satir_sayisi, int *sutun_sayisi) {
+void satirVeSutunHesapla(FILE *dosya, int *satir_sayisi, int *sutun_sayisi) {
     if (dosya == NULL) {
         printf("Dosya açma hatasi!");
     }

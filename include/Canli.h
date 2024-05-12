@@ -17,5 +17,6 @@ typedef struct CANLI* Canli;
 
 Canli CanliOlustur(int, int, int, int);
 void CanliYokEt(Canli);
+/*int canGetir(Canli*);*/
 
 #endif

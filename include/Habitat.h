@@ -4,10 +4,25 @@
 #include "Bitki.h"
 #include "Canli.h"
 #include "File.h"
+#include "Bocek.h"
+#include "Habitat.h"
+#include "Sinek.h"
+#include "Pire.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void*** habitatOlustur(FILE*, int, int);
-void habitaYazdir();
-/*void habitatElemanEkle(FILE*, void***, int, int );*/
-/*void callGorunumMethod(void*);*/
+struct HABITAT {
+    void*** array;
+    Canli kazanan;
+    int satirSayisi, sutunSayisi;
+
+};
+typedef struct HABITAT* Habitat;
+
+Habitat habitatOlustur(FILE*, int, int);
+void*** bosArrayOlustur(FILE*, int, int);
+void habitatElemanEkle(Habitat, FILE*);
+void habitatYazdir(Habitat);
+/*void habitatBaslat(Habitat);*/
 
 #endif

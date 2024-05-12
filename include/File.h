@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-void countRowsAndColumns(FILE*, int*, int*);
+void satirVeSutunHesapla(FILE*, int*, int*);
 
 #endif
